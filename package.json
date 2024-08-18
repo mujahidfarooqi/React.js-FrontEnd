@@ -1,0 +1,87 @@
+{
+  "name": "My App",
+  "description": "Its a react.js frontend application",
+  "author": "Mujahid Farooqi",
+  "keywords": [
+    "bootstrap 5",
+    "react",
+    "react dashboard",
+    "react admin template",
+    "free react",
+    "react ui library",
+    "react bootstrap 5",
+    "bootstrap 5 dashboard",
+    "themesberg"
+  ],
+  "license": "MIT",
+  "homepage": "http://localhost:3000/examples/sign-in",
+  "bugs": {
+    "url": "https://github.com/mujahidfarooqi/React.js-FrontEnd/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mujahidfarooqi/React.js-FrontEnd"
+  },
+  "version": "1.0.1",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.17",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@themesberg/react-bootstrap": "^1.4.1",
+    "axios": "^1.7.2",
+    "bootstrap": "5.0.0-beta1",
+    "chartist": "^0.11.4",
+    "chartist-plugin-tooltips-updated": "^0.1.4",
+    "i18next": "^23.13.0",
+    "moment-timezone": "^0.5.31",
+    "react": "^16.13.1",
+    "react-chartist": "^0.14.4",
+    "react-copy-to-clipboard": "^5.0.3",
+    "react-datetime": "^3.0.4",
+    "react-dom": "^16.13.1",
+    "react-github-btn": "^1.2.0",
+    "react-i18next": "^15.0.1",
+    "react-live": "^2.2.3",
+    "react-router-dom": "^5.2.0",
+    "react-router-hash-link": "^2.3.1",
+    "react-scripts": "^5.0.1",
+    "react-transition-group": "^4.4.1",
+    "sass": "^1.50.0",
+    "simplebar-react": "^2.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build-local": "PUBLIC_URL=./ react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-react": "^7.24.7"
+  }
+}
