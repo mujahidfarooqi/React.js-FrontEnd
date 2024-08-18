@@ -4,7 +4,7 @@ import { faAngleDown, faAngleUp, faArrowDown, faArrowUp, faEdit, faEllipsisH, fa
 import { Col, Row, Nav, Form, Card, Button, Table, Dropdown, InputGroup, Pagination, ButtonGroup } from '@themesberg/react-bootstrap';
 import AuthService from '../../src/AuthService';
 import {CounterWidget} from '../components/Widgets';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 const ValueChange = ({ value, suffix }) => {
   const valueIcon = value < 0 ? faAngleDown : faAngleUp;
@@ -79,7 +79,7 @@ export const EmployeeList = () => {
   const [editEmployeeId, setEditEmployeeId] = useState(null);
   const [editEmployeeData, setEditEmployeeData] = useState({ id: null, name: '', position: '' });
   const [searchQuery, setSearchQuery] = useState('');
-  
+  const { t } = useTranslation();
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10; // Number of items per page
