@@ -19,5 +19,4 @@ ReactDOM.render(
     <HomePage />
   </BrowserRouter>,
   document.getElementById("root")
-  // test
 );
