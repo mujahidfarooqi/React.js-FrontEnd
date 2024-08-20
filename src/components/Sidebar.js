@@ -99,6 +99,7 @@ export default (props = {}) => {
               </Nav.Link>
             </div>
             <Nav className="flex-column pt-3 pt-md-0">
+            <NavItem title="Add Employee" icon={faCog} link={Routes.AddEmployee.path} />
               <NavItem title={t('employeeList')} link={Routes.EmployeeList.path} icon={faChartPie} />
               
               <NavItem title="Transactions" icon={faHandHoldingUsd} link={Routes.Transactions.path} />
