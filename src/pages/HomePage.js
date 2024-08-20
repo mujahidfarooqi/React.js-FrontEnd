@@ -5,8 +5,8 @@ import { Routes } from "../routes";
 // Import pages and components
 import Upgrade from "./Upgrade";
 import DashboardOverview from "./dashboard/DashboardOverview";
-import {EmployeeList} from "../components/EmployeeList";
 import {GeneralInfoForm} from "../components/AddEmployee";
+import {EmployeeList} from "../components/EmployeeList";
 import Transactions from "./Transactions";
 import Settings from "./Settings";
 import BootstrapTables from "./tables/BootstrapTables";
@@ -104,8 +104,8 @@ const RouteWithSidebar = ({ component: Component, ...rest }) => {
 export default () => (
   <Switch>
     <RouteWithLoader exact path={Routes.Signin.path} component={Signin} />
-    <RouteWithSidebar exact path={Routes.EmployeeList.path} component={EmployeeList} />
     <RouteWithSidebar exact path={Routes.AddEmployee.path} component={GeneralInfoForm} />
+    <RouteWithSidebar exact path={Routes.EmployeeList.path} component={EmployeeList} />
     <RouteWithLoader exact path={Routes.Signup.path} component={Signup} />
     <RouteWithLoader exact path={Routes.ForgotPassword.path} component={ForgotPassword} />
     <RouteWithLoader exact path={Routes.ResetPassword.path} component={ResetPassword} />
@@ -146,6 +146,6 @@ export default () => (
     <RouteWithSidebar exact path={Routes.DocsBuild.path} component={DocsBuild} />
     <RouteWithSidebar exact path={Routes.DocsChangelog.path} component={DocsChangelog} />
 
-    <Redirect to={Routes.Signin.path} />
+    <Redirect to={Routes.NotFound.path} />
   </Switch>
 );

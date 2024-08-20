@@ -4,5 +4,8 @@
   "employeeList": "Employee List",
   "total": "Total",
   "male": "Male",
-  "female": "Female"
+  "female": "Female",
+  "addEmployee":"Add Employee",
+  "generalInformation": "General Information",
+  "SignInToOurPlatform": "Sign in to our platform"
 }

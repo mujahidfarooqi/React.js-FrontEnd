@@ -4,7 +4,7 @@ import SimpleBar from 'simplebar-react';
 import { useLocation } from "react-router-dom";
 import { CSSTransition } from 'react-transition-group';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBook, faBoxOpen, faChartPie, faCog, faFileAlt, faHandHoldingUsd, faSignOutAlt, faTable, faTimes, faCalendarAlt, faMapPin, faInbox, faRocket } from "@fortawesome/free-solid-svg-icons";
+import { faBook, faBoxOpen, faChartPie, faCog, faFileAlt, faHandHoldingUsd, faSignOutAlt, faTable, faTimes, faCalendarAlt, faMapPin, faInbox, faRocket, faUser } from "@fortawesome/free-solid-svg-icons";
 import { Nav, Badge, Image, Button, Dropdown, Accordion, Navbar } from '@themesberg/react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -72,7 +72,7 @@ export default (props = {}) => {
   return (
     <>
       <Navbar expand={false} collapseOnSelect variant="dark" className="navbar-theme-primary px-4 d-md-none">
-        <Navbar.Brand className="me-lg-5" as={Link} to={Routes.EmployeeList.path}>
+        <Navbar.Brand className="me-lg-5" as={Link} to={Routes.AddEmployee.path}>
           <Image src={ReactHero} className="navbar-brand-light" />
         </Navbar.Brand>
         <Navbar.Toggle as={Button} aria-controls="main-navbar" onClick={onCollapse}>
@@ -99,10 +99,10 @@ export default (props = {}) => {
               </Nav.Link>
             </div>
             <Nav className="flex-column pt-3 pt-md-0">
-            <NavItem title="Add Employee" icon={faCog} link={Routes.AddEmployee.path} />
-              <NavItem title={t('employeeList')} link={Routes.EmployeeList.path} icon={faChartPie} />
+              <NavItem title={t('addEmployee')} icon={faUser} link={Routes.AddEmployee.path} />
+              <NavItem title={t('employeeList')} icon={faTable} link={Routes.EmployeeList.path}  />
               
-              <NavItem title="Transactions" icon={faHandHoldingUsd} link={Routes.Transactions.path} />
+              {/* <NavItem title="Transactions" icon={faHandHoldingUsd} link={Routes.Transactions.path} />
               <NavItem title="Settings" icon={faCog} link={Routes.Settings.path} />
               <CollapsableNavItem eventKey="tables/" title="Tables" icon={faTable}>
                 <NavItem title="Bootstrap Table" link={Routes.BootstrapTables.path} />
@@ -146,7 +146,7 @@ export default (props = {}) => {
                 <NavItem title="Tabs" link={Routes.Tabs.path} />
                 <NavItem title="Toasts" link={Routes.Toasts.path} />
                 <NavItem title="Tooltips" link={Routes.Tooltips.path} />
-              </CollapsableNavItem>
+              </CollapsableNavItem> */}
             </Nav>
           </div>
         </SimpleBar>

@@ -51,7 +51,7 @@ export default () => {
             <Col xs={12} className="d-flex align-items-center justify-content-center">
               <div className="bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
                 <div className="text-center text-md-center mb-4 mt-md-0">
-                  <h3 className="mb-0">Sign in to our platform</h3>
+                  <h3 className="mb-0">{t('SignInToOurPlatform')}</h3>
                 </div>
                 <Form className="mt-4" onSubmit={handleSubmit}>
                   <Form.Group id="email" className="mb-4">
