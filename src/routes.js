@@ -3,8 +3,8 @@ export const Routes = {
     // pages
     Signin: { path: "/examples/sign-in" },
     DashboardOverview: { path: "/dashboard/overview" },
-    EmployeeList: { path: "/components/EmployeeList" },
     AddEmployee: { path: "/components/AddEmployee" },
+    EmployeeList: { path: "/components/EmployeeList" },
     Transactions: { path: "/transactions" },
     Settings: { path: "/settings" },
     Upgrade: { path: "/upgrade" },

@@ -6,6 +6,7 @@ import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { Col, Row, Card, Form, Button, InputGroup } from '@themesberg/react-bootstrap';
 import AuthService from '../AuthService'; // Ensure the correct path to AuthService
 import DismissableAlerts from '../pages/components/Alerts'; // Import the custom alert component
+import { useTranslation } from 'react-i18next';
 
 export const GeneralInfoForm = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +24,7 @@ export const GeneralInfoForm = () => {
     state: "0",
     zip: ""
   });
-
+  const { t } = useTranslation();
   const [alert, setAlert] = useState({
     show: false,
     variant: 'success',
@@ -88,7 +89,7 @@ export const GeneralInfoForm = () => {
   return (
     <Card border="light" className="bg-white shadow-sm mb-4">
       <Card.Body>
-        <h5 className="mb-4">General information</h5>
+            <h5 className="mb-4">{t('generalInformation')}</h5>
         <Form onSubmit={handleSubmit}>
           <Row>
             <Col md={6} className="mb-3">
