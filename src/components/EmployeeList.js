@@ -5,6 +5,7 @@ import { Col, Row, Nav, Form, Card, Button, Table, Dropdown, InputGroup, Paginat
 import AuthService from '../../src/AuthService';
 import {CounterWidget} from '../components/Widgets';
 import { useTranslation } from 'react-i18next';
+import DismissableAlerts from '../pages/components/Alerts'; // Import the custom alert component
 
 const ValueChange = ({ value, suffix }) => {
   const valueIcon = value < 0 ? faAngleDown : faAngleUp;
@@ -22,7 +23,7 @@ const ValueChange = ({ value, suffix }) => {
 
 export const EmployeeList = () => {
   const TableRow = (props) => {
-    const { id, name, position, phone, join_date } = props;
+    const { id, firstName, position, phone, join_date } = props;
     return (
       <tr>
         <td>
@@ -32,7 +33,7 @@ export const EmployeeList = () => {
         </td>
         <td>
           <span className="fw-normal">
-            {name}
+            {firstName}
           </span>
         </td>
         <td>
@@ -64,7 +65,7 @@ export const EmployeeList = () => {
               <Dropdown.Item>
                 <FontAwesomeIcon icon={faEdit} className="me-2" /> Edit
               </Dropdown.Item>
-              <Dropdown.Item onClick={() => handleDelete(id, name)} className="text-danger">
+              <Dropdown.Item onClick={() => handleDelete(id, firstName)} className="text-danger">
                 <FontAwesomeIcon icon={faTrashAlt} className="me-2" /> Remove
               </Dropdown.Item>
             </Dropdown.Menu>
@@ -79,6 +80,7 @@ export const EmployeeList = () => {
   const [editEmployeeId, setEditEmployeeId] = useState(null);
   const [editEmployeeData, setEditEmployeeData] = useState({ id: null, name: '', position: '' });
   const [searchQuery, setSearchQuery] = useState('');
+  const [alert, setAlert] = useState({ show: false, variant: '', message: '' });
   const { t } = useTranslation();
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
@@ -91,7 +93,7 @@ export const EmployeeList = () => {
   useEffect(() => {
     setFilteredEmployees(
       employees.filter(employee =>
-        employee.name.toLowerCase().includes(searchQuery.toLowerCase())
+        employee.firstName.toLowerCase().includes(searchQuery.toLowerCase())
       )
     );
   }, [searchQuery, employees]);
@@ -115,8 +117,18 @@ export const EmployeeList = () => {
       let delEmployee = { id, name };
       await AuthService.makeAuthorizedRequest('POST', `http://localhost:15713/api/employees/delete`, delEmployee);
       setEmployees(employees.filter(employee => employee.id !== id));
+      setAlert({
+        show: true,
+        variant: 'success',
+        message: 'Employee successfully deleted!'
+      });
     } catch (error) {
       console.error('Error deleting employee:', error);
+      setAlert({
+        show: true,
+        variant: 'danger',
+        message: 'Failed to delete employee.'
+      });
     }
   };
 
@@ -163,7 +175,7 @@ export const EmployeeList = () => {
   return (
     <>
     <CounterWidget employee={employees} />
-      <Card border="light" className="table-wrapper table-responsive shadow-sm">
+      <Card border="light" className="table-wrapper table-responsive shadow-sm mb-3">
         <Card.Header>
           <Row className="align-items-center">
             <Col>
@@ -234,6 +246,12 @@ export const EmployeeList = () => {
           </Card.Footer>
         </Card.Body>
       </Card>
+      <DismissableAlerts
+        variant={alert.variant}
+        message={alert.message}
+        show={alert.show}
+        onClose={() => setAlert({ ...alert, show: false })}
+      />
     </>
   );
 };

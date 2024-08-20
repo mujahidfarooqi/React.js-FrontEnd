@@ -6,6 +6,7 @@ import { Routes } from "../routes";
 import Upgrade from "./Upgrade";
 import DashboardOverview from "./dashboard/DashboardOverview";
 import {EmployeeList} from "../components/EmployeeList";
+import {GeneralInfoForm} from "../components/AddEmployee";
 import Transactions from "./Transactions";
 import Settings from "./Settings";
 import BootstrapTables from "./tables/BootstrapTables";
@@ -104,6 +105,7 @@ export default () => (
   <Switch>
     <RouteWithLoader exact path={Routes.Signin.path} component={Signin} />
     <RouteWithSidebar exact path={Routes.EmployeeList.path} component={EmployeeList} />
+    <RouteWithSidebar exact path={Routes.AddEmployee.path} component={GeneralInfoForm} />
     <RouteWithLoader exact path={Routes.Signup.path} component={Signup} />
     <RouteWithLoader exact path={Routes.ForgotPassword.path} component={ForgotPassword} />
     <RouteWithLoader exact path={Routes.ResetPassword.path} component={ResetPassword} />
